@@ -1,0 +1,20 @@
+%h1 Listing pharmacies
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @pharmacies.each do |pharmacy|
+    %tr
+      %td= pharmacy.name
+      %td= link_to 'Show', pharmacy
+      %td= link_to 'Edit', edit_pharmacy_path(pharmacy)
+      %td= link_to 'Destroy', pharmacy, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Pharmacy', new_pharmacy_path
+= link_to "Home", root_path
